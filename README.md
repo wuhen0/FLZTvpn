@@ -2,6 +2,8 @@
 
 ✈ 机场签到
 
+特别鸣谢：https://github.com/liuyuhe666/flzt-auto-checkin
+
 默认触发方式为`手动触发`和`每隔 6 小时自动触发`
 
 如需更改触发方式，请自行编辑 `.github/workflows/run.yml`
