@@ -2,7 +2,7 @@ name: Python
 
 on:
   schedule:
-    - cron: "0 */6 * * *"
+    - cron: '0 2 * * *'  # 每天 UTC 时间 2:00 执行，即北京时间 10:00
   workflow_dispatch:
 
 jobs:
@@ -30,11 +30,3 @@ jobs:
             PASSWORD: ${{secrets.PASSWORD}}
         run: |
           python main.py
-      - name: Keep alive
-        run: |
-          echo "$(date +"%Y-%m-%d %H:%M:%S")" > updated
-          git config user.name 'github-actions[bot]'
-          git config user.email 'github-actions[bot]@users.noreply.github.com'
-          git add .
-          git commit -m "updated" || exit 0
-          git push
